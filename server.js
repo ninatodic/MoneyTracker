@@ -7,6 +7,9 @@ const app = express();
 
 connectDB();
 
+//Init midleware
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.json({ msg: 'Hello to expence tracker app' }));
 
 //Define routes
