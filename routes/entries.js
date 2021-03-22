@@ -82,7 +82,7 @@ router.put('/:id', auth, async (req, res) => {
   try {
     let entry = await Entry.findById(req.params.id);
 
-    if (!entry) return res.status(404).json({ msg: 'Entry not found' });
+    if (!entry) return res.status(404).json({ msg: 'Entry not found.' });
 
     // Make sure user owns entry
     if (entry.user.toString() !== req.user.id) {
