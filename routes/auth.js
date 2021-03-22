@@ -8,6 +8,15 @@ const { check, validationResult } = require('express-validator');
 
 const User = require('../models/User');
 
+router.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, *'
+  );
+  next();
+});
+
 //@route    GET api/auth
 //@desc     Get logged in user
 //@access   Private

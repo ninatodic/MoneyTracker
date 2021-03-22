@@ -4,8 +4,16 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
-
 const User = require('../models/User');
+
+router.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, x-auth-token, X-Requested-With, Content-Type, Accept, *'
+  );
+  next();
+});
 
 //@route    POST api/users
 //@desc     Register a user
