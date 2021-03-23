@@ -35,6 +35,5 @@
       "last 1 safari version"
     ]
   },
-  
-  "proxy": "https://desolate-sierra-34522.herokuapp.com/"
+  "proxy": "http://localhost:5000"
 }

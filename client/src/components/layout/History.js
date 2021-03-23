@@ -7,7 +7,6 @@ const History = () => {
   const entryContext = useContext(EntryContext);
   const { entries, getEntries, loading } = entryContext;
 
-  console.log(entries);
   useEffect(() => {
     getEntries();
     //eslint-disable-next-line
