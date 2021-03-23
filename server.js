@@ -1,4 +1,3 @@
-const fallback = require('express-history-api-fallback');
 const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
@@ -22,7 +21,6 @@ if (process.env.NODE_ENV === 'production') {
   );
 }
 
-app.use(fallback('index.html', { root }));
 //Define routes
 
 app.use('/api/users', require('./routes/users'));
