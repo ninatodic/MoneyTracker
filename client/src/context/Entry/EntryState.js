@@ -85,7 +85,7 @@ const EntryState = (props) => {
     };
 
     try {
-      const res = await axios.put(`/api/entries${entry._id}`, entry, config);
+      const res = await axios.put(`/api/entries/${entry._id}`, entry, config);
       dispatch({
         type: UPDATE_ENTRY,
         payload: res.data,
