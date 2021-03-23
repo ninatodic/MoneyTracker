@@ -26,9 +26,7 @@ const EntryState = (props) => {
 
   const getEntries = async () => {
     try {
-      const res = await axios.get(
-        'https://desolate-sierra-34522.herokuapp.com/api/entries'
-      );
+      const res = await axios.get('http://localhost:5000/api/entries');
       dispatch({ type: GET_ENTRIES, payload: res.data });
     } catch (err) {
       dispatch({ type: ENTRY_ERROR, payload: err.response.msg });
