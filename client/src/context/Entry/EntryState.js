@@ -16,7 +16,7 @@ import {
 
 const EntryState = (props) => {
   const initialState = {
-    entries: null,
+    entries: [],
     current: null,
     error: null,
   };
