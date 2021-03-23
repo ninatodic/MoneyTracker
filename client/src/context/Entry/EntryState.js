@@ -26,7 +26,9 @@ const EntryState = (props) => {
 
   const getEntries = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/entries');
+      const res = await axios.get(
+        'https://desolate-sierra-34522.herokuapp.com/api/entries'
+      );
       dispatch({ type: GET_ENTRIES, payload: res.data });
     } catch (err) {
       dispatch({ type: ENTRY_ERROR, payload: err.response.msg });
@@ -43,7 +45,7 @@ const EntryState = (props) => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/entries',
+        'https://desolate-sierra-34522.herokuapp.com/api/entries',
         entry,
         config
       );
@@ -57,7 +59,9 @@ const EntryState = (props) => {
 
   const deleteEntry = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/entries/${id}`);
+      await axios.delete(
+        `https://desolate-sierra-34522.herokuapp.com/api/entries/${id}`
+      );
       dispatch({ type: DELETE_ENTRY, payload: id });
     } catch (err) {
       dispatch({ type: ENTRY_ERROR, payload: err.response.msg });
@@ -90,7 +94,7 @@ const EntryState = (props) => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/entries${entry._id}`,
+        `https://desolate-sierra-34522.herokuapp.com/api/entries${entry._id}`,
         entry,
         config
       );

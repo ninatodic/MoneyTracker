@@ -32,7 +32,9 @@ const AuthState = (props) => {
       setAuthToken(localStorage.token);
     }
     try {
-      const res = await axios.get('http://localhost:5000/api/auth');
+      const res = await axios.get(
+        'https://desolate-sierra-34522.herokuapp.com/api/auth'
+      );
 
       dispatch({ type: USER_LOADED, payload: res.data });
     } catch (err) {
@@ -50,7 +52,7 @@ const AuthState = (props) => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/users',
+        'https://desolate-sierra-34522.herokuapp.com/api/users',
         formData,
         config
       );
@@ -77,7 +79,11 @@ const AuthState = (props) => {
     };
 
     try {
-      const res = await axios.post('/api/auth', formData, config);
+      const res = await axios.post(
+        'https://desolate-sierra-34522.herokuapp.com/api/auth',
+        formData,
+        config
+      );
 
       dispatch({
         type: LOGIN_SUCCESS,
