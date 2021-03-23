@@ -4,7 +4,6 @@ import EntryContext from '../../context/Entry/EntryContext';
 const Balance = () => {
   const { entries } = useContext(EntryContext);
 
-  console.log(entries);
   const amounts =
     entries !== null ? entries.map((entry) => parseInt(entry.amount)) : [];
   const total = amounts.reduce((acc, item) => (acc += item), 0);

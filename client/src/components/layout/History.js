@@ -18,6 +18,7 @@ const History = () => {
       {entries !== null && !loading ? (
         <ul className='history-list'>
           {entries.map((entry) => {
+            console.log(entry);
             return <HistoryItem entry={entry} key={entry._id} />;
           })}
         </ul>
